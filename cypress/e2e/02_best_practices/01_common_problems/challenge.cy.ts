@@ -39,13 +39,3 @@ it('checks card attributes', () => {
     .and('be.visible')
 
 })
-
-// challenge #3: run this negative test and see if the result of this test is correct 
-it('No boards in list', () => {
-
-  cy.visit('/')
-
-  cy.get('[data-cy=board-item]')
-    .should('not.exist')
-
-});

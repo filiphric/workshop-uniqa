@@ -49,17 +49,3 @@ it('checks card attributes', () => {
 
 })
 
-// challenge #3: run this negative test and see if the result of this test is correct 
-it('No boards in list', () => {
-
-  cy.intercept('GET', '/api/boards')
-    .as('boards')
-
-  cy.visit('/')
-
-  cy.wait('@boards')
-
-  cy.get('[data-cy=board-item]')
-    .should('not.exist') // this is giving us false positive
-
-});
